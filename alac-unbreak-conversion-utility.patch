@@ -1,0 +1,22 @@
+From c86990a99949f526a4a4036e6147107c1248ae0d Mon Sep 17 00:00:00 2001
+From: olgeni <olgeni@olgeni.com>
+Date: Mon, 11 Feb 2019 17:46:55 +0100
+Subject: [PATCH] Unbreak build of sample conversion utility.
+
+---
+ convert-utility/Makefile.am | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/convert-utility/Makefile.am b/convert-utility/Makefile.am
+index c4fcc13..8b49219 100644
+--- a/convert-utility/Makefile.am
++++ b/convert-utility/Makefile.am
+@@ -14,7 +14,7 @@
+ 
+ bin_PROGRAMS = alacconvert$(EXEEXT)
+ 
+-alacconvert_CPPFLAGS = -Wno-multichar
++alacconvert_CPPFLAGS = -Wno-multichar -I../codec
+ alacconvert_LDADD = ../codec/libalac.la
+ alacconvert_SOURCES = \
+     main.cpp \
